@@ -1,4 +1,4 @@
-package com.example.mmovie3;
+package com.example.mmovie3.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +8,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mmovie3.data.Movie;
+import com.example.mmovie3.R;
+import com.example.mmovie3.pojo.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -36,13 +37,13 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
     //слушатель для постеров(картинок в приложении), принимающий позицию элемента
-    interface OnPosterClickListener {
+    public interface OnPosterClickListener {
         void onPosterClick(int position);
     }
 
     //подгружать данные следующей страницы, только после того, как пользователь долистал страницу до конца
     //слушатель для этих целей
-    interface OnReachEndListener {
+    public interface OnReachEndListener {
         void onReachEnd();
     }
 

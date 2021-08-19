@@ -2,17 +2,15 @@ package com.example.mmovie3.data;
 
 import android.app.Application;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import java.security.PrivateKey;
+import com.example.mmovie3.pojo.Movie;
+
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-
-import javax.crypto.spec.PSource;
 
 //класс для хранения и редактирования данных приложения через БД, посредством использования MovieDatabase и MovieDao
 //AndroidViewModel является подклассом ViewModel и нужен для хранения и управления данными, связанными с UI.

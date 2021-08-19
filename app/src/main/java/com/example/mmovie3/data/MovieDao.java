@@ -6,6 +6,8 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.mmovie3.pojo.Movie;
+
 import java.util.List;
 
 //Dao, Insert, Query и пр. аннотации помогают указать, что должен делать класс либо метод. Они содержатся в классе Room. Здесь они для синхронизации работы БД и этого интерфейса

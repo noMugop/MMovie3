@@ -1,13 +1,21 @@
-package com.example.mmovie3.data;
+package com.example.mmovie3.pojo;
 
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.example.mmovie3.converters.Converter;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 //затачиваем объект под работу с таблицей в БД при помощи Room, добавляя ключи, строки и @аннотации.
 //все необходимые данные мы берем из нашего JSON объекта, структуру которого мы видим на jsonmate.com
 //@Entity этим мы превратили класс в таблицу для БД
 @Entity(tableName = "movies")
+//@TypeConverters(value = Converter.class)
 public class Movie {
     //переменные с примитивными типами для работы с БД
     //Room не может преобразовать класс в строку
@@ -23,6 +31,10 @@ public class Movie {
     private String backdropPath;
     private double voteAverage;
     private String releaseDate;
+
+   /* @SerializedName("testClass")
+    @Expose
+    private List<TestClass> testClassList = null;*/
 
     public Movie(int uniqueId, int id, int voteCount, String title, String originalTitle, String overview, String posterPath, String bigPosterPath, String backdropPath, double voteAverage, String releaseDate) {
         this.uniqueId = uniqueId;
@@ -51,6 +63,14 @@ public class Movie {
         this.voteAverage = voteAverage;
         this.releaseDate = releaseDate;
     }
+
+ /*   public List<TestClass> getTestClassList() {
+        return testClassList;
+    }
+
+    public void setTestClassList(List<TestClass> testClassList) {
+        this.testClassList = testClassList;
+    }*/
 
     public int getUniqueId() { return uniqueId; }
 

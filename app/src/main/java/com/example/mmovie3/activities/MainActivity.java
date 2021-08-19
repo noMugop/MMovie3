@@ -1,11 +1,10 @@
-package com.example.mmovie3;
+package com.example.mmovie3.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.HasDefaultViewModelProviderFactory;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -16,22 +15,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mmovie3.R;
+import com.example.mmovie3.adapters.MovieAdapter;
 import com.example.mmovie3.data.MainViewModel;
-import com.example.mmovie3.data.Movie;
+import com.example.mmovie3.pojo.Movie;
 import com.example.mmovie3.utils.JSONUtils;
 import com.example.mmovie3.utils.NetworkUtils;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.net.URL;
@@ -65,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static int methodOfSort;
 
     private static String lang;
-    private static int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

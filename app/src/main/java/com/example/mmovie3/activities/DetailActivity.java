@@ -1,8 +1,10 @@
-package com.example.mmovie3;
+package com.example.mmovie3.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mmovie3.R;
 
 //детальная информация о фильме
 public class DetailActivity extends AppCompatActivity {

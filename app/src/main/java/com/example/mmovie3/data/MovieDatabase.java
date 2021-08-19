@@ -1,17 +1,18 @@
 package com.example.mmovie3.data;
 
-import android.content.ContentProvider;
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.mmovie3.pojo.Movie;
+
 //entities это таблицы, в нашем случае только таблица Movie.class
 //по шаблону класса Movie будет создана таблица БД
 //здесь мы используем паттерн Singleton - паттерн позволяет следить за тем, чтобы у нас был лишь один экземпляр класса. Даже названия будут соответствовать паттерну
 //P.S. абстрактный класс может не реализовывать методы интерфейса
-@Database(entities = {Movie.class}, version = 3, exportSchema = false)
+@Database(entities = {Movie.class}, version = 5, exportSchema = false)
 public abstract class MovieDatabase extends RoomDatabase {
 
     private static final String DB_NAME = "movies.db";
@@ -25,6 +26,7 @@ public abstract class MovieDatabase extends RoomDatabase {
         synchronized (LOCK) {
             if (database == null) {
                 //передаем (контекст, название класса который мы расширяем при помощи Room т е наш класс, и имя БД)
+                //fallbackToDestructiveMigration() - если версия БД изменилась, то удали все старые данные и создай новую БД
                 database = Room.databaseBuilder(context, MovieDatabase.class, DB_NAME).fallbackToDestructiveMigration().build();
             }
         }

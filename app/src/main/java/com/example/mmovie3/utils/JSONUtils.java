@@ -1,6 +1,6 @@
 package com.example.mmovie3.utils;
 
-import com.example.mmovie3.data.Movie;
+import com.example.mmovie3.pojo.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;
