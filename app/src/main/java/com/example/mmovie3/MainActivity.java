@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private static int methodOfSort;
 
     private static String lang;
+    private static int i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
